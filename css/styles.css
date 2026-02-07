@@ -1,6 +1,5 @@
 .menuCard {
     width: 18vw;
-    height: 56vh;
     border: 2px solid black;
     border-radius: 2vw;
     background-color: rgb(58, 110, 72);
@@ -14,7 +13,7 @@
 }
 .menuCard h3{
     margin-top: 0.25vw;
-    font-size: x-large;
+    font-size: 3vh;
     margin-bottom: 1vw;
     color: white;
 }
@@ -23,7 +22,7 @@
     border: 0;
     width: 60%;
     height: 7vh;
-    font-size: large;
+    font-size: 2.5vh;
     font-weight: 700;
     border-radius: 1vw;
     margin-top: 5%;
@@ -31,6 +30,7 @@
     align-self: center;
     color: white;
     transition: transform 1s;
+    margin-bottom: 3vh;
 }
 .menuCard div button:hover{
     transform: scale(1.25);
