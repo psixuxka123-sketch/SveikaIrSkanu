@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sveika Ir Skanu | Rezervacija</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Apie mus</a></li>
+                <li><a href="menu.html">Meniu</a></li>
+                <li><a href="rezervacija.html">Rezervacija</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="phantomHeader"></div>
+    <main class="rez">
+        <form action="mailto:sveikia.ir.skanu@gmail.com" method="post" enctype="text/plain">
+            <label for="input">Jūsų vardas ir pavardė</label>
+            <input type="text" placeholder="Vardas Pavardė" required>
+
+            <label for="input">Jūsų el. paštas</label>
+            <input type="email" placeholder="example@gmail.com" required>
+
+            <label for="input">Žmonių kiekis</label>
+            <input type="number" max="6" min="1" placeholder="1-6" required>
+            
+            <label for="input">Rezervavimo laikas</label>
+            <input type="datetime-local" min="2026-02-07T00:00" required>
+            
+            <label for="textarea">Komentaras</label>
+            <textarea rows="10" cols="50" placeholder="Alergijos ir kt."></textarea>
+
+            <button type="submit">Siųsti</button>
+        </form>
+    </main>
+    <footer>
+         <p>Sveika ir skanu © 2026</p>
+         <button type="button">?</button>
+       <div class="support">
+        <form action="mailto:sveika.ir.skanu@gmail.com" method="post" enctype="text/plain">
+            <input type="text" placeholder="Jūsų vardas ir pavardė" required>
+            <input type="email" placeholder="example@gmail.com" required>
+            <textarea cols="50" rows="10" placeholder="Jūsų problemą" required></textarea>
+            <button>Siusti</button>
+        </form>
+        </div>
+    </footer>
+</body>
+</html>
