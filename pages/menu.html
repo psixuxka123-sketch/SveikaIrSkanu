@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/scripts.js" defer></script>
 </head>
-<body>
+<body style="background-image: url('../img/bg.jpg');">
     <header>
         <nav>
             <ul>
@@ -21,31 +21,34 @@
     <main>
         <div class="cardBox"></div>
             <div class="buy">
-                <form action="mailto:sveika.ir.skanu@gmail.com" method="post" enctype="text/plain">
-
+                <form class="order">
+                    <button type="button" onclick="closeBuy()">X</button>
+                </form>
+                <form action="mailto:sveika.ir.skanu@gmail.com" method="post" enctype="text/plain" class="payment">
+                    <button type="button" onclick="closeBuy()">X</button>
+    
                     <label for="input">Jūsų vardas ir pavardė:</label>
                     <input type="text" placeholder="Vardas ir Pavardė" required>
 
                     <label for="input">Jūsų telefono numeris:</label>
-                    <input type="email" placeholder="+37012345678" required>
+                    <input type="tel" placeholder="+37012345678" required>
                     
                     <label for="input">Jūsų adresas</label>
                     <input type="text" placeholder="Pavadinimo g. 1, Vilnius">
 
                     <label><input type="radio" name="pay" value="Kortele"> Kortele</label>
                     <label><input type="radio" name="pay" value="Grinais"> Grinais</label>
+                    
                     <div class="cardInfo">
-                        <h3>Kortelės duomenys:</h3>
-
                         <lable for="input">Kortelės numeris</lable>
-                        <input type="text" placeholder="XXXX XXXX XXXX XXXX">
+                        <input type="text" pattern="[0-9]*" placeholder="XXXX XXXX XXXX XXXX" minlength="12" maxlength="12">
 
                         <lable for="input">Galiojimo terminas(mėnuo/metai)</lable>
                         <input type="number" min="01" max="12" placeholder="01">
                         <input type="number" min="26" max="99" placeholder="27">
 
                         <lable for="input"> Vardas ir pavardė kortelėje</lable>
-                        <input type="text" placeholder="VARDASPAVARDĖ">
+                        <input type="text" placeholder="Vardas Pavardė">
                         <label for="input">CVV2/CVC2</label>
                         <input type="text" placeholder="123">
                     </div>
