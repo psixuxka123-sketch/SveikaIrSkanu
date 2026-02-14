@@ -9,6 +9,12 @@ function hover(element, enter, leave){
 
 function openBuy(){
     const buy = document.querySelector(".buy");
+    const order = buy.querySelector(".order");
+    order.style.display = "grid";
+    const form3 = buy.querySelectorAll("form")[1];
+    console.log(form3);
+    
+    form3.style.display = "none";
     buy.style.display = "flex";
 }
 function closeBuy(){
@@ -82,28 +88,31 @@ function newCardInArray(card){
     }
 }
 
-newCardInArray(new Card("Blynai su uogomis",
+
+newCardInArray(new Card("Fusilli makaronai su vištiena ir daržovių salotomis",
+                        "menu_img4.jpg", 
+                        "Vištienos ir makaronų spiralės su žaliuoju pesto padažu. Patiekiama su šviežių daržovių salotomis iš pomidorų, agurkų ir ridikėlių.",
+                        "10.49"));
+newCardInArray(new Card("Avižiniai dribsniai su uogomis ir žemės riešutų sviestu",
                         "menu_img1.jpg", 
-                        "Švelnūs blynai iš viso grūdo miltų su šviežiomis aviečių uogomis. Tikras naturalus skonis.",
-                        "3.49"));
-
-newCardInArray(new Card("Šviežios salotos",
-                        "menu_img2.jpg", 
-                        "Salotų lapai, daržovės ir naminis užpilas. Sveika ir skanu.",
+                        "Avižiniai dribsniai su mėlynėmis, avietėmis, gervuogėmis ir bananu. Aplieti žemės riešutų sviestu. Sveiki ir sotūs pusryčiai.",
                         "4.99"));
+newCardInArray(new Card("Grikių dubenėlis su avokadu, kiaušiniu ir sūriu",
+                        "menu_img5.jpg", 
+                        "Sveiki ir sotūs pusryčiai: purūs grikiai, šviežias agurkas, prinokęs avokadas, virtas kiaušinis ir pjaustytas sūris.",
+                        "7.99"));
 
-newCardInArray(new Card("Vaisių kokteilis",
-                        "menu_img3.jpg", 
-                        "Sultingi vaisiai, uogos ir truputis medaus – energija visai dienai.",
-                        "5.29"));
+newCardInArray(new Card("Vištienos vinegretas su rugine duona",
+                        "menu_img6.jpg", 
+                        "Klasikinis burokėlių, bulvių, morkų ir žirnelių vinegretas. Patiekiamas su virta vištiena ir ruginės duonos riekelėmis.",
+                        "8.99"));
+                        
+
 const form = document.querySelector(".buy").querySelectorAll("form")[1];
 const form2 = document.querySelector(".order");
 
 menuCards.forEach(element => {
     createMenuCard(element.name, element.imgSrc, element.description, element.price);
-
-
-
 
     const newText = document.createElement("label");
     newText.setAttribute("for", "input")
@@ -119,7 +128,7 @@ menuCards.forEach(element => {
 });
 
 const price = document.createElement("p");
-price.textContent = "0.00" + "€";
+price.textContent = "Kaina: 0.00" + "€";
 
 const submitButton = document.createElement("button");
 submitButton.addEventListener('click', ()=>{
@@ -133,7 +142,7 @@ form2.appendChild(submitButton);
 form2.appendChild(price);
 
 function updatePrice(newPrice){
-    price.textContent = newPrice + "€";
+    price.textContent = "Kaina: " + newPrice + "€";
 }
 
 form2.addEventListener("change", (e)=>{

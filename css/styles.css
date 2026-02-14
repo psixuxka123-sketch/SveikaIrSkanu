@@ -1,11 +1,13 @@
 .menuCard {
-    width: 18vw;
+    width: 100%;
     border: 2px solid black;
     border-radius: 2vw;
     background-color: rgb(58, 110, 72);
     color: rgb(255, 255, 255);
     font-family: Arial, Helvetica, sans-serif;
     overflow: hidden;
+    transition: transform 0.5s;
+
 }
 .menuCard div > *{
     text-align: center;
@@ -13,24 +15,24 @@
 }
 .menuCard h3{
     margin-top: 0.25vw;
-    font-size: 3vh;
+    font-size: 1.3rem;
     margin-bottom: 1vw;
     color: white;
 }
 .menuCard div button{
     background-color: rgb(94, 132, 92);
     border: 0;
-    width: 60%;
     height: 7vh;
-    font-size: 2.5vh;
+    font-size: 1.25rem;
     font-weight: 700;
     border-radius: 1vw;
     margin-top: 5%;
-    justify-self: flex-end;
+    justify-self: center;
     align-self: center;
     color: white;
     transition: transform 1s;
     margin-bottom: 3vh;
+
 }
 .menuCard div button:hover{
     transform: scale(1.25);
@@ -42,16 +44,24 @@
     font-size: x-large;
     font-weight: 700;
 }
+.menuCard:hover img{
+    border-bottom: 0.1rem solid rgb(3, 135, 3);
+}
 .menuCard img{
     width: 100%;
-    height: 40%;
+    height: 35vh;
     border-radius: 2vw 2vw 0 0;
     border-bottom: 0.2vw solid black;
 }
 .menuCard div{
-    padding: 10px;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 10vh 13vh 10vh auto;
     flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+    align-content: center;
+
 }
 .menuCard:hover{
     transform: scale(1.05);
@@ -59,137 +69,166 @@
     border: 1px solid rgb(3, 135, 3);
 }
 .cardBox{
-    justify-content: center;
-    display: flex;
-    gap: 3vw;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 2vh;
+    width: 65%;
+    padding: 5vh;
 }
 .buy{
     position:fixed;
-    width: 25%;
-    height: fit-content;
-    left: 38%;
-    top:20%;
-    color: white;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
     display: none;
 }
+.buy input{
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    color: black;
+    font-size: 2rem;
+    width: 25%;
+}
 .buy button:nth-child(1){
     background-color: transparent;
     border: 0;
-    color: red;
+    color: white;
+    background-color: red;
+    border-radius: 100%;
+    width: 3vh;
+    height: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: 900;
-    padding: 0;
-    margin-bottom: 3vh;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    padding: 2vh;
+    transition: transform 0.3s, color 0.3s, background-color 0.3s;
+}
+.buy button:nth-child(1):hover{
+    background-color: white;
+    color: red;
+    cursor:pointer;
+    transform: scale(1.15);
 }
 .buy form{
-    width: 100%;
-    height: 100%;
-    background-color: rgba(58, 110, 72, 0.752); 
+    width: 90%;
+    max-width: 500px;
+    height: fit-content;
+    background-color: rgba(255, 255, 255, 0.751);
+    border: 0.7vh solid rgb(26, 132, 22);
+    color: black;
     padding: 2vw;
+    padding-top: 10vh;
+    position: relative;
     box-sizing: border-box;
     border-radius: 3vw;
 }
 .buy form > div > *, .buy form > *{
     display: block;
 }
-
 .buy input{
     width: 70%;
     height: 5%;
-}
-.buy input[type="number"]{
-    display: inline-block;
-    width: 25%;
-}
-.buy label{
-
 }
 .buy label:has(input[type="radio"]){
     display: inline-block;
     text-align: center;
 }
-.buy button{
-    
+.ad img{
+    height: 70vh;
+    border-radius: 75px;
+    border: solid 0.5vh rgb(41, 104, 38);
+    box-shadow: 0px 0px 10px 7px rgba(107, 193, 104, 0.918);
+    transition: transform 0.8s, border 1s;
+}
+.ad img:hover{
+    transform: scale(1.1);
+    border: solid 0.5vh rgb(82, 164, 0);
+}
+.ad {
+    padding: 4vh;
 }
 .rez{
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    color: White;
-    
+    color: White;  
 }
-.advl p{
-    background-color: rgba(58, 110, 72);
-    width: 95%;
-    margin:15px;
-    padding:15px;
-    font-size: 252%;
-    border-radius: 5px;
-}
-.advr p{
-    background-color: rgba(58, 110, 72);
-    width: 95%;
-    margin:15px;
-    padding:15px;
-    font-size: 252%;
-    border-radius: 5px;
-
-}
-.advr{
-    transform: rotate(90deg);
-}
-.advl{
-    transform: rotate(90deg);
-}
-
 .rez input{
-    border-radius: 5px;
-    background-color: rgba(162, 217, 160);
-}
-
-.rez label{
-    padding: 5px;
-}
-
-.rez textarea{
-    background-color: rgba(162, 217, 160);
-    font-weight: 50%;
-    border-radius: 7px;
-    text-align: left;
-    border: solid 0px;
-}
-
-.rez form{
-    background-color: rgba(58, 110, 72);
+    padding: 2vh;
     border-radius: 15px;
-    width: 34%;
-    height: 50%;
-    padding: 5px;
+    border: solid 2px;
+    font-size: 1rem;
+    color: black;
+    background-color: rgb(137, 195, 135);
+}
+.rez input::placeholder{
+    font-size: 1.5rem;
+    color: rgb(77, 77, 77);
+}
+.rez textarea::placeholder{
+    font-size: 1.5rem;
+}
+.rez label{
+    padding: 3px;
+    font-size: 1.5rem;
+}
+.rez textarea{
+    background-color: rgb(137, 195, 135);
+    font-weight: 50%;
+    border-radius: 15px;
+    border: solid 2px;
+    text-align: left;
+    font-size: 1rem; 
+    color: black;
+    padding: 2vh;
+}
+.rez form{
+    background-color: rgb(41, 104, 38);
+    border-radius: 10px;
+    padding: 1vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    width: 37%;
+    height: 80%;
 }
 .rez form > *{
     display: block;
 }
 .rez button{
+    cursor: pointer;
     height: 5%;
     width: 15%;
     border:0k;
     border-radius: 5px;
     align-self: center;
-    margin: px;
-    background-color: rgba(162, 217, 160);
+    margin: 5px;
+    background-color: rgb(137, 195, 135);
+    transition: transform 1s, background-color 1s;
+}
+.rez button:hover{
+    transform: scale(1.25);
+    background-color: lime;
 }
 
 header{
     position: fixed;
     width: 100%;
-    background-color: rgb(94, 132, 92);
+    background-color: rgb(19, 89, 5);
     height: 10vh;
     z-index: 100;
+    border-bottom: 0.1rem solid rgb(122, 219, 118);
+    box-shadow: 0px 0px 0.9rem 0.9rem rgba(82, 189, 78, 0.8);
 }
 nav ul li a{
     text-decoration: none;
@@ -198,7 +237,7 @@ nav ul li a{
 }
 nav ul li:has(> a:hover){
     transform: scale(1.25);
-    border-bottom: 0.25vw solid rgb(58, 110, 72);
+    border-bottom: 0.25vw solid rgb(2, 135, 35);
 }
 nav{
     text-align: center;
@@ -227,7 +266,8 @@ body{
     margin: 0;  
 }
 footer{
-    background-color: rgb(94, 132, 92);
+    background-color: rgb(19, 89, 5);
+    border-top: 0.1rem solid rgb(122, 219, 118);
     width: 100%;
     height: 8vh;
     position: fixed;
@@ -241,9 +281,9 @@ footer{
     
 } 
 footer button{
-    width: 2vw;
-    height: 2vw;
-    font-size: 4vh;
+    width: 2.5vw;
+    height: 2.5vw;
+    font-size: 1.9rem;
     font-weight: 900;
     display: flex;
     justify-content: center;
@@ -254,11 +294,46 @@ footer button{
     color: white;
     border: 1px solid rgb(30, 57, 37);
     transition: transform 0.5s, background-color 0.5s;
-    
 }
 footer button:hover{
     transform: scale(1.25);
     background-color: rgb(122, 219, 118);
+}
+.footer-buttons{
+    display: flex;
+    -webkit-text-stroke: 0.1rem rgb(0, 0, 0);
+    gap: 1.3vh;
+}
+.soc[name="Facebook"]{
+    transition: transform 0.5s, background-color 0.5s;
+}
+.soc[name="Facebook"]:hover{
+    transform: scale(1.25);
+    background-color: rgb(46, 46, 251);
+}
+.soc a{
+    -webkit-text-stroke: 0.1rem rgb(0, 0, 0);
+    color: White;
+    text-decoration: none;
+}
+.soc[name="TikTok"]{
+    transition: transform 1s, background-color 1s;
+}
+.soc[name="TikTok"]:hover{
+    transform: scale(1.25);
+    background-color: black;
+}
+svg, path{
+    width: 100%;
+    height: 3.5vh;
+}
+.soc[name="Instagram"]{
+    transition: transform 1s;
+}
+.soc[name="Instagram"]:hover{
+    transform: scale(1.25);
+    background: #ff00b7;
+    background: linear-gradient(195deg, rgba(255, 0, 183, 1) 28%, rgba(153, 53, 181, 1) 47%, rgba(181, 157, 0, 1) 88%);
 }
 .phantomFooter{
     width: 100%;
@@ -299,26 +374,100 @@ textarea{
     justify-content: center;
 }
 .main article p{
-    font-size: large;
-    margin-top: 0.5vw
+    font-size: 1.3rem;
+    margin-top: 0.5vw;
+    color: rgb(255, 255, 255);
 }
 .main h2{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: x-large;
+    font-size: 2.3rem;
+    -webkit-text-stroke: 0.15rem rgb(41, 159, 37);
+    color: white;
 }
 .payment{
     display: none;
 }
+.payment input{
+    border: solid 1px;
+    border-radius: 5px;
+    padding: 1vh;
+    width: 75%;
+    height: 1vh;
+    font-size: 1em;
+}
+.payment input[type="radio"]{
+    width: 100%;
+
+}
+.payment label:has(> input){
+    font-size:1.2rem;
+    width: 49%;
+}
+.payment button{
+    border: solid 1px;
+    border-radius: 5px;
+}
+
 .order{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto;
     gap: 1vw;
 }
 .order button:nth-child(1){
     grid-column: span 2;
     text-align: left;
 }
-.order input{
+.buy .order input[type="number"]{
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 900;
     width: 100%;
     height: 100%;
+}
+.order button{
+    font-size: 1rem;
+}
+.order button[type="button"]{
+    background-color: rgba(17, 51, 15, 0.836);
+    border: 0;
+    height: 7vh;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-radius: 1vw;
+    margin-top: 5%;
+    justify-self: center;
+    align-self: center;
+    color: white;
+    transition: transform 0.6s;
+    margin-bottom: 3vh;
+}
+.order button:hover{
+    cursor: pointer;
+    transform: scale(1.25);
+}
+.order p{
+    font-size: 1.5rem;
+    font-weight: 900;
+    grid-column: span 2;
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    padding: 1vh;
+}
+body{
+    background-color: rgb(30, 76, 28);
+}
+.cardBox{
+    background-blend-mode:color;
+    background-color: rgba(0, 0, 0, 0.326);
+    border-radius: 13vh;
+    border: 0.4rem solid rgb(3, 142, 3);
+}
+.REZ{
+    margin-bottom: 0;
 }
